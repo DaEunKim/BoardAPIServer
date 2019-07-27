@@ -1,5 +1,7 @@
 # Board API
 
+## Post
+
 ### Create Post
 * [POST] http://lunahc92.tplinkdns.com:5100/api/posts/create
 ```
@@ -52,6 +54,8 @@
 }
 ```
 
+## User
+
 ### Create User
 * [POST] http://lunahc92.tplinkdns.com:5100/api/users/create
 ```
@@ -63,10 +67,10 @@
 }
 ```
 
-# Read User
+### Read User
 * [GET] http://lunahc92.tplinkdns.com:5100/api/users/read/{id}
 
-# Update User
+### Update User
 * [PUT] http://lunahc92.tplinkdns.com:5100/api/users/read/{id}
 ```
 {
@@ -77,10 +81,13 @@
 }
 ```
 
-# Delete User
-* [Delete] http://lunahc92.tplinkdns.com:5100/api/users/delete/{id}
+### Delete User
+* [DELETE] http://lunahc92.tplinkdns.com:5100/api/users/delete/{id}
 
-# Add Bookmark
+### List User
+* [GET] http://lunahc92.tplinkdns.com:5100/api/users/list?page={page#}
+
+### Add Bookmark
 * [POST] http://lunahc92.tplinkdns.com:5100/api/users/addbookmark
 ```
 {
@@ -89,7 +96,7 @@
 }
 ```
 
-# Remove Bookmark
+### Remove Bookmark
 * [POST] http://lunahc92.tplinkdns.com:5100/api/users/removebookmark
 ```
 {
