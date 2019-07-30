@@ -116,6 +116,43 @@ namespace BoardWebAPIServer.Controllers
             });
         }
 
+        [HttpPost("login")]
+        public IActionResult Login(LoginIn userIn)
+        {
+            // 임시로 만든거라 여기서 간단히 동작만 구현
+            if (userIn == null)
+            {
+                return Ok(new
+                {
+                    success = false,
+                    reason = "Failed to Login",
+                });
+            }
+
+            if (_userSvc.Read(userIn.Id, out var read) == false)
+            {
+                return Ok(new
+                {
+                    success = false,
+                    reason = "Invalid Id or Password",
+                });
+            }
+
+            if (read.Password != userIn.Password)
+            {
+                return Ok(new
+                {
+                    success = false,
+                    reason = "Invalid Id or Password",
+                });
+            }
+
+            return Ok(new
+            {
+                success = true,
+            });
+        }
+
         [HttpPost("addbookmark")]
         public IActionResult AddBookMark(BookMarkIn bookmarkIn)
         {

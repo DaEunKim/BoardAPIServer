@@ -30,6 +30,12 @@ namespace BoardWebAPIServer.Models
         public string Email { get; set; }
     }
 
+    public class LoginIn
+    {
+        public string Id { get; set; }
+        public string Password { get; set; }
+    }
+
     public class BookMarkIn
     {
         public string UserId { get; set; }
